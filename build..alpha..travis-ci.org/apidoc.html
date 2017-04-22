@@ -1,0 +1,2069 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/sourcelair/xterm.js#readme"
+
+    >xterm (v2.5.0)</a>
+</h1>
+<h4>Full xterm terminal, in your browser</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm">module xterm</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>cancelEvents</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>convertEol</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>cursorBlink</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>disableStdin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>popOnBell</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>screenKeys</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>useFlowControl</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">xterm.</span>visualBell</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.xterm">
+            function <span class="apidocSignatureSpan"></span>xterm
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter">
+            function <span class="apidocSignatureSpan">xterm.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.bindBlur">
+            function <span class="apidocSignatureSpan">xterm.</span>bindBlur
+            <span class="apidocSignatureSpan">(term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.bindFocus">
+            function <span class="apidocSignatureSpan">xterm.</span>bindFocus
+            <span class="apidocSignatureSpan">(term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.bindKeys">
+            function <span class="apidocSignatureSpan">xterm.</span>bindKeys
+            <span class="apidocSignatureSpan">(term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.cancel">
+            function <span class="apidocSignatureSpan">xterm.</span>cancel
+            <span class="apidocSignatureSpan">(ev, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.inherits">
+            function <span class="apidocSignatureSpan">xterm.</span>inherits
+            <span class="apidocSignatureSpan">(child, parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.loadAddon">
+            function <span class="apidocSignatureSpan">xterm.</span>loadAddon
+            <span class="apidocSignatureSpan">(addon, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.off">
+            function <span class="apidocSignatureSpan">xterm.</span>off
+            <span class="apidocSignatureSpan">(el, type, handler, capture)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.on">
+            function <span class="apidocSignatureSpan">xterm.</span>on
+            <span class="apidocSignatureSpan">(el, type, handler, capture)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">xterm.</span>scrollback</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">xterm.</span>tabStopWidth</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>CharMeasure</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>CircularList</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>Clipboard</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>CompositionHelper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>EventEmitter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>Generic</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>InputHandler</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>Linkifier</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>Parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>Renderer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>Viewport</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>_colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>attach</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>colors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>fit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>focus</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>fullscreen</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>geometry</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>tangoColors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>terminado</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xterm.</span>vcolors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">xterm.</span>cursorStyle</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">xterm.</span>termName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">xterm.</span>theme</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.CharMeasure">module xterm.CharMeasure</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.CharMeasure.CharMeasure">
+            function <span class="apidocSignatureSpan">xterm.</span>CharMeasure
+            <span class="apidocSignatureSpan">(document, parentElement)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.CircularList">module xterm.CircularList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.CircularList.CircularList">
+            function <span class="apidocSignatureSpan">xterm.</span>CircularList
+            <span class="apidocSignatureSpan">(maxLength)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.Clipboard">module xterm.Clipboard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Clipboard.copyHandler">
+            function <span class="apidocSignatureSpan">xterm.Clipboard.</span>copyHandler
+            <span class="apidocSignatureSpan">(ev, term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Clipboard.pasteHandler">
+            function <span class="apidocSignatureSpan">xterm.Clipboard.</span>pasteHandler
+            <span class="apidocSignatureSpan">(ev, term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Clipboard.prepareTextForClipboard">
+            function <span class="apidocSignatureSpan">xterm.Clipboard.</span>prepareTextForClipboard
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Clipboard.rightClickHandler">
+            function <span class="apidocSignatureSpan">xterm.Clipboard.</span>rightClickHandler
+            <span class="apidocSignatureSpan">(ev, term)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.CompositionHelper">module xterm.CompositionHelper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.CompositionHelper.CompositionHelper">
+            function <span class="apidocSignatureSpan">xterm.</span>CompositionHelper
+            <span class="apidocSignatureSpan">(textarea, compositionView, terminal)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.EventEmitter">module xterm.EventEmitter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.EventEmitter">
+            function <span class="apidocSignatureSpan">xterm.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.EventEmitter.prototype">module xterm.EventEmitter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.prototype.emit">
+            function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>emit
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.prototype.listeners">
+            function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>listeners
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.prototype.off">
+            function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>off
+            <span class="apidocSignatureSpan">(type, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.prototype.on">
+            function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>on
+            <span class="apidocSignatureSpan">(type, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.prototype.once">
+            function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>once
+            <span class="apidocSignatureSpan">(type, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.EventEmitter.prototype.removeAllListeners">
+            function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>removeAllListeners
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.Generic">module xterm.Generic</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Generic.contains">
+            function <span class="apidocSignatureSpan">xterm.Generic.</span>contains
+            <span class="apidocSignatureSpan">(arr, el)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.InputHandler">module xterm.InputHandler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.InputHandler.InputHandler">
+            function <span class="apidocSignatureSpan">xterm.</span>InputHandler
+            <span class="apidocSignatureSpan">(_terminal)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.Linkifier">module xterm.Linkifier</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Linkifier.Linkifier">
+            function <span class="apidocSignatureSpan">xterm.</span>Linkifier
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.Parser">module xterm.Parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Parser.Parser">
+            function <span class="apidocSignatureSpan">xterm.</span>Parser
+            <span class="apidocSignatureSpan">(_inputHandler, _terminal)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.Renderer">module xterm.Renderer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Renderer.Renderer">
+            function <span class="apidocSignatureSpan">xterm.</span>Renderer
+            <span class="apidocSignatureSpan">(_terminal)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.Viewport">module xterm.Viewport</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.Viewport.Viewport">
+            function <span class="apidocSignatureSpan">xterm.</span>Viewport
+            <span class="apidocSignatureSpan">(terminal, viewportElement, scrollArea, charMeasure)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.attach">module xterm.attach</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.attach.attach">
+            function <span class="apidocSignatureSpan">xterm.</span>attach
+            <span class="apidocSignatureSpan">(term, socket, bidirectional, buffered)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.attach.detach">
+            function <span class="apidocSignatureSpan">xterm.attach.</span>detach
+            <span class="apidocSignatureSpan">(term, socket)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.fit">module xterm.fit</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.fit.fit">
+            function <span class="apidocSignatureSpan">xterm.</span>fit
+            <span class="apidocSignatureSpan">(term)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.fit.proposeGeometry">
+            function <span class="apidocSignatureSpan">xterm.fit.</span>proposeGeometry
+            <span class="apidocSignatureSpan">(term)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.fullscreen">module xterm.fullscreen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.fullscreen.toggleFullScreen">
+            function <span class="apidocSignatureSpan">xterm.fullscreen.</span>toggleFullScreen
+            <span class="apidocSignatureSpan">(term, fullscreen)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xterm.terminado">module xterm.terminado</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.terminado.terminadoAttach">
+            function <span class="apidocSignatureSpan">xterm.terminado.</span>terminadoAttach
+            <span class="apidocSignatureSpan">(term, socket, bidirectional, buffered)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xterm.terminado.terminadoDetach">
+            function <span class="apidocSignatureSpan">xterm.terminado.</span>terminadoDetach
+            <span class="apidocSignatureSpan">(term, socket)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm" id="apidoc.module.xterm">module xterm</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.xterm" id="apidoc.element.xterm.xterm">
+        function <span class="apidocSignatureSpan"></span>xterm
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Terminal(options) {
+    var self = this;
+    if (!(this instanceof Terminal)) {
+        return new Terminal(arguments[0], arguments[1], arguments[2]);
+    }
+    self.browser = Browser;
+    self.cancel = Terminal.cancel;
+    EventEmitter_1.EventEmitter.call(this);
+    if (typeof options === &#x27;number&#x27;) {
+        options = {
+            cols: arguments[0],
+            rows: arguments[1],
+            handler: arguments[2]
+        };
+    }
+    options = options || {};
+    Object.keys(Terminal.defaults).forEach(function (key) {
+        if (options[key] == null) {
+            options[key] = Terminal.options[key];
+            if (Terminal[key] !== Terminal.defaults[key]) {
+                options[key] = Terminal[key];
+            }
+        }
+        self[key] = options[key];
+    });
+    if (options.colors.length === 8) {
+        options.colors = options.colors.concat(Terminal._colors.slice(8));
+    }
+    else if (options.colors.length === 16) {
+        options.colors = options.colors.concat(Terminal._colors.slice(16));
+    }
+    else if (options.colors.length === 10) {
+        options.colors = options.colors.slice(0, -2).concat(Terminal._colors.slice(8, -2), options.colors.slice(-2));
+    }
+    else if (options.colors.length === 18) {
+        options.colors = options.colors.concat(Terminal._colors.slice(16, -2), options.colors.slice(-2));
+    }
+    this.colors = options.colors;
+    this.options = options;
+    this.parent = options.body || options.parent || (document ? document.getElementsByTagName(&#x27;body&#x27;)[0] : null);
+    this.cols = options.cols || options.geometry[0];
+    this.rows = options.rows || options.geometry[1];
+    this.geometry = [this.cols, this.rows];
+    if (options.handler) {
+        this.on(&#x27;data&#x27;, options.handler);
+    }
+    this.ybase = 0;
+    this.ydisp = 0;
+    this.x = 0;
+    this.y = 0;
+    this.cursorState = 0;
+    this.cursorHidden = false;
+    this.convertEol;
+    this.queue = &#x27;&#x27;;
+    this.scrollTop = 0;
+    this.scrollBottom = this.rows - 1;
+    this.customKeydownHandler = null;
+    this.cursorBlinkInterval = null;
+    this.applicationKeypad = false;
+    this.applicationCursor = false;
+    this.originMode = false;
+    this.insertMode = false;
+    this.wraparoundMode = true;
+    this.normal = null;
+    this.charset = null;
+    this.gcharset = null;
+    this.glevel = 0;
+    this.charsets = [null];
+    this.decLocator;
+    this.x10Mouse;
+    this.vt200Mouse;
+    this.vt300Mouse;
+    this.normalMouse;
+    this.mouseEvents;
+    this.sendFocus;
+    this.utfMouse;
+    this.sgrMouse;
+    this.urxvtMouse;
+    this.element;
+    this.children;
+    this.refreshStart;
+    this.refreshEnd;
+    this.savedX;
+    this.savedY;
+    this.savedCols;
+    this.readable = true;
+    this.writable = true;
+    this.defAttr = (0 &#x3c;&#x3c; 18) | (257 &#x3c;&#x3c; 9) | (256 &#x3c;&#x3c; 0);
+    this.curAttr = this.defAttr;
+    this.params = [];
+    this.currentParam = 0;
+    this.prefix = &#x27;&#x27;;
+    this.postfix = &#x27;&#x27;;
+    this.inputHandler = new InputHandler_1.InputHandler(this);
+    this.parser = new Parser_1.Parser(this.inputHandler, this);
+    this.renderer = this.renderer || null;
+    this.linkifier = this.linkifier || new Linkifier_1.Linkifier();
+    this.writeBuffer = [];
+    this.writeInProgress = false;
+    this.xoffSentToCatchUp = false;
+    this.writeStopped = false;
+    this.surrogate_high = &#x27;&#x27;;
+    this.lines = new CircularList_1.CircularList(this.scrollback);
+    var i = this.rows;
+    while (i--) {
+        this.lines.push(this.blankLine());
+    }
+    this.tabs;
+    this.setupStops();
+    this.userScrolling = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter" id="apidoc.element.xterm.EventEmitter">
+        function <span class="apidocSignatureSpan">xterm.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+    this._events = this._events || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.bindBlur" id="apidoc.element.xterm.bindBlur">
+        function <span class="apidocSignatureSpan">xterm.</span>bindBlur
+        <span class="apidocSignatureSpan">(term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindBlur = function (term) {
+    on(term.textarea, &#x27;blur&#x27;, function (ev) {
+        term.refresh(term.y, term.y);
+        if (term.sendFocus) {
+            term.send(EscapeSequences_1.C0.ESC + &#x27;[O&#x27;);
+        }
+        term.element.classList.remove(&#x27;focus&#x27;);
+        term.clearCursorBlinkingInterval.apply(term);
+        Terminal.focus = null;
+        term.emit(&#x27;blur&#x27;, { terminal: term });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.bindFocus" id="apidoc.element.xterm.bindFocus">
+        function <span class="apidocSignatureSpan">xterm.</span>bindFocus
+        <span class="apidocSignatureSpan">(term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindFocus = function (term) {
+    on(term.textarea, &#x27;focus&#x27;, function (ev) {
+        if (term.sendFocus) {
+            term.send(EscapeSequences_1.C0.ESC + &#x27;[I&#x27;);
+        }
+        term.element.classList.add(&#x27;focus&#x27;);
+        term.showCursor();
+        term.restartCursorBlinking.apply(term);
+        Terminal.focus = term;
+        term.emit(&#x27;focus&#x27;, { terminal: term });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.bindKeys" id="apidoc.element.xterm.bindKeys">
+        function <span class="apidocSignatureSpan">xterm.</span>bindKeys
+        <span class="apidocSignatureSpan">(term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindKeys = function (term) {
+    on(term.element, &#x27;keydown&#x27;, function (ev) {
+        if (document.activeElement != this) {
+            return;
+        }
+        term.keyDown(ev);
+    }, true);
+    on(term.element, &#x27;keypress&#x27;, function (ev) {
+        if (document.activeElement != this) {
+            return;
+        }
+        term.keyPress(ev);
+    }, true);
+    on(term.element, &#x27;keyup&#x27;, function (ev) {
+        if (!wasMondifierKeyOnlyEvent(ev)) {
+            term.focus(term);
+        }
+    }, true);
+    on(term.textarea, &#x27;keydown&#x27;, function (ev) {
+        term.keyDown(ev);
+    }, true);
+    on(term.textarea, &#x27;keypress&#x27;, function (ev) {
+        term.keyPress(ev);
+        this.value = &#x27;&#x27;;
+    }, true);
+    on(term.textarea, &#x27;compositionstart&#x27;, term.compositionHelper.compositionstart.bind(term.compositionHelper));
+    on(term.textarea, &#x27;compositionupdate&#x27;, term.compositionHelper.compositionupdate.bind(term.compositionHelper));
+    on(term.textarea, &#x27;compositionend&#x27;, term.compositionHelper.compositionend.bind(term.compositionHelper));
+    term.on(&#x27;refresh&#x27;, term.compositionHelper.updateCompositionElements.bind(term.compositionHelper));
+    term.on(&#x27;refresh&#x27;, function (data) {
+        term.queueLinkification(data.start, data.end);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.cancel" id="apidoc.element.xterm.cancel">
+        function <span class="apidocSignatureSpan">xterm.</span>cancel
+        <span class="apidocSignatureSpan">(ev, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cancel(ev, force) {
+    if (!this.cancelEvents &#x26;&#x26; !force) {
+        return;
+    }
+    ev.preventDefault();
+    ev.stopPropagation();
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+exports.copyHandler = copyHandler;
+function pasteHandler(ev, term) {
+ev.stopPropagation();
+var text;
+var dispatchPaste = function (text) {
+    term.handler(text);
+    term.textarea.value = &#x27;&#x27;;
+    return term.<span class="apidocCodeKeywordSpan">cancel</span>(ev);
+};
+if (term.browser.isMSIE) {
+    if (window.clipboardData) {
+        text = window.clipboardData.getData(&#x27;Text&#x27;);
+        dispatchPaste(text);
+    }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.inherits" id="apidoc.element.xterm.inherits">
+        function <span class="apidocSignatureSpan">xterm.</span>inherits
+        <span class="apidocSignatureSpan">(child, parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function inherits(child, parent) {
+    function f() {
+        this.constructor = child;
+    }
+    f.prototype = parent.prototype;
+    child.prototype = new f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.loadAddon" id="apidoc.element.xterm.loadAddon">
+        function <span class="apidocSignatureSpan">xterm.</span>loadAddon
+        <span class="apidocSignatureSpan">(addon, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadAddon = function (addon, callback) {
+    if (typeof exports === &#x27;object&#x27; &#x26;&#x26; typeof module === &#x27;object&#x27;) {
+        return require(&#x27;./addons/&#x27; + addon + &#x27;/&#x27; + addon);
+    }
+    else if (typeof define == &#x27;function&#x27;) {
+        return require([&#x27;./addons/&#x27; + addon + &#x27;/&#x27; + addon], callback);
+    }
+    else {
+        console.error(&#x27;Cannot load a module without a CommonJS or RequireJS environment.&#x27;);
+        return false;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.off" id="apidoc.element.xterm.off">
+        function <span class="apidocSignatureSpan">xterm.</span>off
+        <span class="apidocSignatureSpan">(el, type, handler, capture)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function off(el, type, handler, capture) {
+    el.removeEventListener(type, handler, capture || false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (this._events[type]) {
+        delete this._events[type];
+    }
+};
+EventEmitter.prototype.once = function (type, listener) {
+    function on() {
+        var args = Array.prototype.slice.call(arguments);
+        this.<span class="apidocCodeKeywordSpan">off</span>(type, on);
+        return listener.apply(this, args);
+    }
+    on.listener = listener;
+    return this.on(type, on);
+};
+EventEmitter.prototype.emit = function (type) {
+    if (!this._events[type]) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.on" id="apidoc.element.xterm.on">
+        function <span class="apidocSignatureSpan">xterm.</span>on
+        <span class="apidocSignatureSpan">(el, type, handler, capture)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function on(el, type, handler, capture) {
+    if (!Array.isArray(el)) {
+        el = [el];
+    }
+    el.forEach(function (element) {
+        element.addEventListener(type, handler, capture || false);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+EventEmitter.prototype.once = function (type, listener) {
+    function on() {
+        var args = Array.prototype.slice.call(arguments);
+        this.off(type, on);
+        return listener.apply(this, args);
+    }
+    on.listener = listener;
+    return this.<span class="apidocCodeKeywordSpan">on</span>(type, on);
+};
+EventEmitter.prototype.emit = function (type) {
+    if (!this._events[type]) {
+        return;
+    }
+    var args = Array.prototype.slice.call(arguments, 1);
+    var obj = this._events[type];
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.CharMeasure" id="apidoc.module.xterm.CharMeasure">module xterm.CharMeasure</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.CharMeasure.CharMeasure" id="apidoc.element.xterm.CharMeasure.CharMeasure">
+        function <span class="apidocSignatureSpan">xterm.</span>CharMeasure
+        <span class="apidocSignatureSpan">(document, parentElement)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CharMeasure(document, parentElement) {
+    var _this = _super.call(this) || this;
+    _this._document = document;
+    _this._parentElement = parentElement;
+    return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.CircularList" id="apidoc.module.xterm.CircularList">module xterm.CircularList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.CircularList.CircularList" id="apidoc.element.xterm.CircularList.CircularList">
+        function <span class="apidocSignatureSpan">xterm.</span>CircularList
+        <span class="apidocSignatureSpan">(maxLength)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CircularList(maxLength) {
+    this._array = new Array(maxLength);
+    this._startIndex = 0;
+    this._length = 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.Clipboard" id="apidoc.module.xterm.Clipboard">module xterm.Clipboard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Clipboard.copyHandler" id="apidoc.element.xterm.Clipboard.copyHandler">
+        function <span class="apidocSignatureSpan">xterm.Clipboard.</span>copyHandler
+        <span class="apidocSignatureSpan">(ev, term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function copyHandler(ev, term) {
+    var copiedText = window.getSelection().toString(), text = prepareTextForClipboard(copiedText);
+    if (term.browser.isMSIE) {
+        window.clipboardData.setData(&#x27;Text&#x27;, text);
+    }
+    else {
+        ev.clipboardData.setData(&#x27;text/plain&#x27;, text);
+    }
+    ev.preventDefault();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Clipboard.pasteHandler" id="apidoc.element.xterm.Clipboard.pasteHandler">
+        function <span class="apidocSignatureSpan">xterm.Clipboard.</span>pasteHandler
+        <span class="apidocSignatureSpan">(ev, term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pasteHandler(ev, term) {
+    ev.stopPropagation();
+    var text;
+    var dispatchPaste = function (text) {
+        term.handler(text);
+        term.textarea.value = &#x27;&#x27;;
+        return term.cancel(ev);
+    };
+    if (term.browser.isMSIE) {
+        if (window.clipboardData) {
+            text = window.clipboardData.getData(&#x27;Text&#x27;);
+            dispatchPaste(text);
+        }
+    }
+    else {
+        if (ev.clipboardData) {
+            text = ev.clipboardData.getData(&#x27;text/plain&#x27;);
+            dispatchPaste(text);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Clipboard.prepareTextForClipboard" id="apidoc.element.xterm.Clipboard.prepareTextForClipboard">
+        function <span class="apidocSignatureSpan">xterm.Clipboard.</span>prepareTextForClipboard
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function prepareTextForClipboard(text) {
+    var space = String.fromCharCode(32), nonBreakingSpace = String.fromCharCode(160), allNonBreakingSpaces = new RegExp(nonBreakingSpace
+, &#x27;g&#x27;), processedText = text.split(&#x27;\n&#x27;).map(function (line) {
+        var processedLine = line.replace(/\s+$/g, &#x27;&#x27;).replace(allNonBreakingSpaces, space);
+        return processedLine;
+    }).join(&#x27;\n&#x27;);
+    return processedText;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Clipboard.rightClickHandler" id="apidoc.element.xterm.Clipboard.rightClickHandler">
+        function <span class="apidocSignatureSpan">xterm.Clipboard.</span>rightClickHandler
+        <span class="apidocSignatureSpan">(ev, term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rightClickHandler(ev, term) {
+    var s = document.getSelection(), selectedText = prepareTextForClipboard(s.toString()), clickIsOnSelection = false, x = ev.clientX
+, y = ev.clientY;
+    if (s.rangeCount) {
+        var r = s.getRangeAt(0), cr = r.getClientRects();
+        for (var i = 0; i &#x3c; cr.length; i++) {
+            var rect = cr[i];
+            clickIsOnSelection = ((x &#x3e; rect.left) &#x26;&#x26; (x &#x3c; rect.right) &#x26;&#x26;
+                (y &#x3e; rect.top) &#x26;&#x26; (y &#x3c; rect.bottom));
+            if (clickIsOnSelection) {
+                break;
+            }
+        }
+        if (selectedText.match(/^\s$/) || !selectedText.length) {
+            clickIsOnSelection = false;
+        }
+    }
+    if (!clickIsOnSelection) {
+        term.textarea.style.position = &#x27;fixed&#x27;;
+        term.textarea.style.width = &#x27;20px&#x27;;
+        term.textarea.style.height = &#x27;20px&#x27;;
+        term.textarea.style.left = (x - 10) + &#x27;px&#x27;;
+        term.textarea.style.top = (y - 10) + &#x27;px&#x27;;
+        term.textarea.style.zIndex = &#x27;1000&#x27;;
+        term.textarea.focus();
+        setTimeout(function () {
+            term.textarea.style.position = null;
+            term.textarea.style.width = null;
+            term.textarea.style.height = null;
+            term.textarea.style.left = null;
+            term.textarea.style.top = null;
+            term.textarea.style.zIndex = null;
+        }, 4);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.CompositionHelper" id="apidoc.module.xterm.CompositionHelper">module xterm.CompositionHelper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.CompositionHelper.CompositionHelper" id="apidoc.element.xterm.CompositionHelper.CompositionHelper">
+        function <span class="apidocSignatureSpan">xterm.</span>CompositionHelper
+        <span class="apidocSignatureSpan">(textarea, compositionView, terminal)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CompositionHelper(textarea, compositionView, terminal) {
+    this.textarea = textarea;
+    this.compositionView = compositionView;
+    this.terminal = terminal;
+    this.isComposing = false;
+    this.isSendingComposition = false;
+    this.compositionPosition = { start: null, end: null };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.EventEmitter" id="apidoc.module.xterm.EventEmitter">module xterm.EventEmitter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.EventEmitter" id="apidoc.element.xterm.EventEmitter.EventEmitter">
+        function <span class="apidocSignatureSpan">xterm.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+    this._events = this._events || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.EventEmitter.prototype" id="apidoc.module.xterm.EventEmitter.prototype">module xterm.EventEmitter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.prototype.emit" id="apidoc.element.xterm.EventEmitter.prototype.emit">
+        function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>emit
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (type) {
+    if (!this._events[type]) {
+        return;
+    }
+    var args = Array.prototype.slice.call(arguments, 1);
+    var obj = this._events[type];
+    for (var i = 0; i &#x3c; obj.length; i++) {
+        obj[i].apply(this, args);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            out += &#x27;&#x3c;/span&#x3e;&#x27;;
+        }
+        this._terminal.children[y].innerHTML = out;
+    }
+    if (parent) {
+        this._terminal.element.appendChild(this._terminal.rowContainer);
+    }
+    this._terminal.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;refresh&#x27;, { element: this._terminal.element, start
+: start, end: end });
+};
+;
+return Renderer;
+}());
+exports.Renderer = Renderer;
+function checkBoldBroken(terminal) {
+var document = terminal.ownerDocument;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.prototype.listeners" id="apidoc.element.xterm.EventEmitter.prototype.listeners">
+        function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>listeners
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listeners = function (type) {
+    return this._events[type] || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.prototype.off" id="apidoc.element.xterm.EventEmitter.prototype.off">
+        function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>off
+        <span class="apidocSignatureSpan">(type, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">off = function (type, listener) {
+    if (!this._events[type]) {
+        return;
+    }
+    var obj = this._events[type];
+    var i = obj.length;
+    while (i--) {
+        if (obj[i] === listener || obj[i].listener === listener) {
+            obj.splice(i, 1);
+            return;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (this._events[type]) {
+        delete this._events[type];
+    }
+};
+EventEmitter.prototype.once = function (type, listener) {
+    function on() {
+        var args = Array.prototype.slice.call(arguments);
+        this.<span class="apidocCodeKeywordSpan">off</span>(type, on);
+        return listener.apply(this, args);
+    }
+    on.listener = listener;
+    return this.on(type, on);
+};
+EventEmitter.prototype.emit = function (type) {
+    if (!this._events[type]) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.prototype.on" id="apidoc.element.xterm.EventEmitter.prototype.on">
+        function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>on
+        <span class="apidocSignatureSpan">(type, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (type, listener) {
+    this._events[type] = this._events[type] || [];
+    this._events[type].push(listener);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+EventEmitter.prototype.once = function (type, listener) {
+    function on() {
+        var args = Array.prototype.slice.call(arguments);
+        this.off(type, on);
+        return listener.apply(this, args);
+    }
+    on.listener = listener;
+    return this.<span class="apidocCodeKeywordSpan">on</span>(type, on);
+};
+EventEmitter.prototype.emit = function (type) {
+    if (!this._events[type]) {
+        return;
+    }
+    var args = Array.prototype.slice.call(arguments, 1);
+    var obj = this._events[type];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.prototype.once" id="apidoc.element.xterm.EventEmitter.prototype.once">
+        function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>once
+        <span class="apidocSignatureSpan">(type, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function (type, listener) {
+    function on() {
+        var args = Array.prototype.slice.call(arguments);
+        this.off(type, on);
+        return listener.apply(this, args);
+    }
+    on.listener = listener;
+    return this.on(type, on);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.EventEmitter.prototype.removeAllListeners" id="apidoc.element.xterm.EventEmitter.prototype.removeAllListeners">
+        function <span class="apidocSignatureSpan">xterm.EventEmitter.prototype.</span>removeAllListeners
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAllListeners = function (type) {
+    if (this._events[type]) {
+        delete this._events[type];
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.Generic" id="apidoc.module.xterm.Generic">module xterm.Generic</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Generic.contains" id="apidoc.element.xterm.Generic.contains">
+        function <span class="apidocSignatureSpan">xterm.Generic.</span>contains
+        <span class="apidocSignatureSpan">(arr, el)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function contains(arr, el) {
+    return arr.indexOf(el) &#x3e;= 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            if (handler) {
+                return handler(event, uri);
+            }
+        });
+    }
+    else {
+        element.addEventListener(&#x27;click&#x27;, function (event) {
+            if (element.classList.<span class="apidocCodeKeywordSpan">contains</span>(INVALID_LINK_CLASS)) {
+                return;
+            }
+            return handler(event, uri);
+        });
+    }
+    return element;
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.InputHandler" id="apidoc.module.xterm.InputHandler">module xterm.InputHandler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.InputHandler.InputHandler" id="apidoc.element.xterm.InputHandler.InputHandler">
+        function <span class="apidocSignatureSpan">xterm.</span>InputHandler
+        <span class="apidocSignatureSpan">(_terminal)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InputHandler(_terminal) {
+    this._terminal = _terminal;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.Linkifier" id="apidoc.module.xterm.Linkifier">module xterm.Linkifier</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Linkifier.Linkifier" id="apidoc.element.xterm.Linkifier.Linkifier">
+        function <span class="apidocSignatureSpan">xterm.</span>Linkifier
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Linkifier() {
+    this._nextLinkMatcherId = HYPERTEXT_LINK_MATCHER_ID;
+    this._rowTimeoutIds = [];
+    this._linkMatchers = [];
+    this.registerLinkMatcher(strictUrlRegex, null, { matchIndex: 1 });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.Parser" id="apidoc.module.xterm.Parser">module xterm.Parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Parser.Parser" id="apidoc.element.xterm.Parser.Parser">
+        function <span class="apidocSignatureSpan">xterm.</span>Parser
+        <span class="apidocSignatureSpan">(_inputHandler, _terminal)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Parser(_inputHandler, _terminal) {
+    this._inputHandler = _inputHandler;
+    this._terminal = _terminal;
+    this._state = ParserState.NORMAL;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.Renderer" id="apidoc.module.xterm.Renderer">module xterm.Renderer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Renderer.Renderer" id="apidoc.element.xterm.Renderer.Renderer">
+        function <span class="apidocSignatureSpan">xterm.</span>Renderer
+        <span class="apidocSignatureSpan">(_terminal)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Renderer(_terminal) {
+    this._terminal = _terminal;
+    this._refreshRowsQueue = [];
+    this._refreshFramesSkipped = 0;
+    this._refreshAnimationFrame = null;
+    if (brokenBold === null) {
+        brokenBold = checkBoldBroken(this._terminal.element);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.Viewport" id="apidoc.module.xterm.Viewport">module xterm.Viewport</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.Viewport.Viewport" id="apidoc.element.xterm.Viewport.Viewport">
+        function <span class="apidocSignatureSpan">xterm.</span>Viewport
+        <span class="apidocSignatureSpan">(terminal, viewportElement, scrollArea, charMeasure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Viewport(terminal, viewportElement, scrollArea, charMeasure) {
+    var _this = this;
+    this.terminal = terminal;
+    this.viewportElement = viewportElement;
+    this.scrollArea = scrollArea;
+    this.charMeasure = charMeasure;
+    this.currentRowHeight = 0;
+    this.lastRecordedBufferLength = 0;
+    this.lastRecordedViewportHeight = 0;
+    this.terminal.on(&#x27;scroll&#x27;, this.syncScrollArea.bind(this));
+    this.terminal.on(&#x27;resize&#x27;, this.syncScrollArea.bind(this));
+    this.viewportElement.addEventListener(&#x27;scroll&#x27;, this.onScroll.bind(this));
+    setTimeout(function () { return _this.syncScrollArea(); }, 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.attach" id="apidoc.module.xterm.attach">module xterm.attach</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.attach.attach" id="apidoc.element.xterm.attach.attach">
+        function <span class="apidocSignatureSpan">xterm.</span>attach
+        <span class="apidocSignatureSpan">(term, socket, bidirectional, buffered)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attach = function (term, socket, bidirectional, buffered) {
+  bidirectional = (typeof bidirectional == &#x27;undefined&#x27;) ? true : bidirectional;
+  term.socket = socket;
+
+  term._flushBuffer = function () {
+    term.write(term._attachSocketBuffer);
+    term._attachSocketBuffer = null;
+    clearTimeout(term._attachSocketBufferTimer);
+    term._attachSocketBufferTimer = null;
+  };
+
+  term._pushToBuffer = function (data) {
+    if (term._attachSocketBuffer) {
+      term._attachSocketBuffer += data;
+    } else {
+      term._attachSocketBuffer = data;
+      setTimeout(term._flushBuffer, 10);
+    }
+  };
+
+  term._getMessage = function (ev) {
+    if (buffered) {
+      term._pushToBuffer(ev.data);
+    } else {
+      term.write(ev.data);
+    }
+  };
+
+  term._sendData = function (data) {
+    socket.send(data);
+  };
+
+  socket.addEventListener(&#x27;message&#x27;, term._getMessage);
+
+  if (bidirectional) {
+    term.on(&#x27;data&#x27;, term._sendData);
+  }
+
+  socket.addEventListener(&#x27;close&#x27;, term.detach.bind(term, socket));
+  socket.addEventListener(&#x27;error&#x27;, term.detach.bind(term, socket));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {boolean} bidirectional - Whether the terminal should send data
+ *                                  to the socket as well.
+ * @param {boolean} buffered - Whether the rendering of incoming data
+ *                             should happen instantly or at a maximum
+ *                             frequency of 1 rendering per 10ms.
+ */
+Xterm.prototype.attach = function (socket, bidirectional, buffered) {
+  return exports.<span class="apidocCodeKeywordSpan">attach</span>(this, socket, bidirectional, buffered);
+};
+
+/**
+ * Detaches the current terminal from the given socket.
+ *
+ * @param {WebSocket} socket - The socket from which to detach the current
+ *                             terminal.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.attach.detach" id="apidoc.element.xterm.attach.detach">
+        function <span class="apidocSignatureSpan">xterm.attach.</span>detach
+        <span class="apidocSignatureSpan">(term, socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">detach = function (term, socket) {
+  term.off(&#x27;data&#x27;, term._sendData);
+
+  socket = (typeof socket == &#x27;undefined&#x27;) ? term.socket : socket;
+
+  if (socket) {
+    socket.removeEventListener(&#x27;message&#x27;, term._getMessage);
+  }
+
+  delete term.socket;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+   * Detaches the current terminal from the given socket.
+   *
+   * @param {WebSocket} socket - The socket from which to detach the current
+   *                             terminal.
+   */
+  Xterm.prototype.detach = function (socket) {
+    return exports.<span class="apidocCodeKeywordSpan">detach</span>(this, socket);
+  };
+
+  return exports;
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.fit" id="apidoc.module.xterm.fit">module xterm.fit</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.fit.fit" id="apidoc.element.xterm.fit.fit">
+        function <span class="apidocSignatureSpan">xterm.</span>fit
+        <span class="apidocSignatureSpan">(term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fit = function (term) {
+  var geometry = exports.proposeGeometry(term);
+
+  if (geometry) {
+    term.resize(geometry.cols, geometry.rows);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x3c;script src=&#x22;node_modules/dist/xterm.js&#x22;&#x3e;&#x3c;/script&#x3e;
+&#x3c;script src=&#x22;node_modules/dist/addons/fit/fit.js&#x22;&#x3e;&#x3c;/script&#x3e;
+```
+
+```js
+var xterm = new Terminal();
+// init code...
+xterm.<span class="apidocCodeKeywordSpan">fit</span>();
+```
+
+## Releases
+
+Xterm.js follows a monthly release cycle roughly.
+
+The existing releases are available at this GitHub repo&#x27;s [Releases](https://github.com/sourcelair/xterm.js/releases), while
+ the roadmap is available as [Milestones](https://github.com/sourcelair/xterm.js/milestones).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.fit.proposeGeometry" id="apidoc.element.xterm.fit.proposeGeometry">
+        function <span class="apidocSignatureSpan">xterm.fit.</span>proposeGeometry
+        <span class="apidocSignatureSpan">(term)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">proposeGeometry = function (term) {
+  if (!term.element.parentElement) {
+    return null;
+  }
+  var parentElementStyle = window.getComputedStyle(term.element.parentElement),
+      parentElementHeight = parseInt(parentElementStyle.getPropertyValue(&#x27;height&#x27;)),
+      parentElementWidth = Math.max(0, parseInt(parentElementStyle.getPropertyValue(&#x27;width&#x27;)) - 17),
+      elementStyle = window.getComputedStyle(term.element),
+      elementPaddingVer = parseInt(elementStyle.getPropertyValue(&#x27;padding-top&#x27;)) + parseInt(elementStyle.getPropertyValue(&#x27;padding
+-bottom&#x27;)),
+      elementPaddingHor = parseInt(elementStyle.getPropertyValue(&#x27;padding-right&#x27;)) + parseInt(elementStyle.getPropertyValue(&#x27;padding
+-left&#x27;)),
+      availableHeight = parentElementHeight - elementPaddingVer,
+      availableWidth = parentElementWidth - elementPaddingHor,
+      container = term.rowContainer,
+      subjectRow = term.rowContainer.firstElementChild,
+      contentBuffer = subjectRow.innerHTML,
+      characterHeight,
+      rows,
+      characterWidth,
+      cols,
+      geometry;
+
+  subjectRow.style.display = &#x27;inline&#x27;;
+  subjectRow.innerHTML = &#x27;W&#x27;; // Common character for measuring width, although on monospace
+  characterWidth = subjectRow.getBoundingClientRect().width;
+  subjectRow.style.display = &#x27;&#x27;; // Revert style before calculating height, since they differ.
+  characterHeight = subjectRow.getBoundingClientRect().height;
+  subjectRow.innerHTML = contentBuffer;
+
+  rows = parseInt(availableHeight / characterHeight);
+  cols = parseInt(availableWidth / characterWidth);
+
+  geometry = {cols: cols, rows: rows};
+  return geometry;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  cols = parseInt(availableWidth / characterWidth);
+
+  geometry = {cols: cols, rows: rows};
+  return geometry;
+};
+
+exports.fit = function (term) {
+  var geometry = exports.<span class="apidocCodeKeywordSpan">proposeGeometry</span>(term);
+
+  if (geometry) {
+    term.resize(geometry.cols, geometry.rows);
+  }
+};
+
+Xterm.prototype.proposeGeometry = function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.fullscreen" id="apidoc.module.xterm.fullscreen">module xterm.fullscreen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.fullscreen.toggleFullScreen" id="apidoc.element.xterm.fullscreen.toggleFullScreen">
+        function <span class="apidocSignatureSpan">xterm.fullscreen.</span>toggleFullScreen
+        <span class="apidocSignatureSpan">(term, fullscreen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toggleFullScreen = function (term, fullscreen) {
+  var fn;
+
+  if (typeof fullscreen == &#x27;undefined&#x27;) {
+    fn = (term.element.classList.contains(&#x27;fullscreen&#x27;)) ? &#x27;remove&#x27; : &#x27;add&#x27;;
+  } else if (!fullscreen) {
+    fn = &#x27;remove&#x27;;
+  } else {
+    fn = &#x27;add&#x27;;
+  }
+
+  term.element.classList[fn](&#x27;fullscreen&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      fn = &#x27;add&#x27;;
+    }
+
+    term.element.classList[fn](&#x27;fullscreen&#x27;);
+  };
+
+  Xterm.prototype.toggleFullscreen = function (fullscreen) {
+    exports.<span class="apidocCodeKeywordSpan">toggleFullScreen</span>(this, fullscreen);
+  };
+
+  return exports;
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xterm.terminado" id="apidoc.module.xterm.terminado">module xterm.terminado</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.terminado.terminadoAttach" id="apidoc.element.xterm.terminado.terminadoAttach">
+        function <span class="apidocSignatureSpan">xterm.terminado.</span>terminadoAttach
+        <span class="apidocSignatureSpan">(term, socket, bidirectional, buffered)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">terminadoAttach = function (term, socket, bidirectional, buffered) {
+  bidirectional = (typeof bidirectional == &#x27;undefined&#x27;) ? true : bidirectional;
+  term.socket = socket;
+
+  term._flushBuffer = function () {
+    term.write(term._attachSocketBuffer);
+    term._attachSocketBuffer = null;
+    clearTimeout(term._attachSocketBufferTimer);
+    term._attachSocketBufferTimer = null;
+  };
+
+  term._pushToBuffer = function (data) {
+    if (term._attachSocketBuffer) {
+      term._attachSocketBuffer += data;
+    } else {
+      term._attachSocketBuffer = data;
+      setTimeout(term._flushBuffer, 10);
+    }
+  };
+
+  term._getMessage = function (ev) {
+    var data = JSON.parse(ev.data)
+    if( data[0] == &#x22;stdout&#x22; ) {
+      if (buffered) {
+        term._pushToBuffer(data[1]);
+      } else {
+        term.write(data[1]);
+      }
+    }
+  };
+
+  term._sendData = function (data) {
+    socket.send(JSON.stringify([&#x27;stdin&#x27;, data]));
+  };
+
+  term._setSize = function (size) {
+    socket.send(JSON.stringify([&#x27;set_size&#x27;, size.rows, size.cols]));
+  };
+
+  socket.addEventListener(&#x27;message&#x27;, term._getMessage);
+
+  if (bidirectional) {
+    term.on(&#x27;data&#x27;, term._sendData);
+  }
+  term.on(&#x27;resize&#x27;, term._setSize);
+
+  socket.addEventListener(&#x27;close&#x27;, term.terminadoDetach.bind(term, socket));
+  socket.addEventListener(&#x27;error&#x27;, term.terminadoDetach.bind(term, socket));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {boolean} bidirectional - Whether the terminal should send data
+ *                                  to the socket as well.
+ * @param {boolean} buffered - Whether the rendering of incoming data
+ *                             should happen instantly or at a maximum
+ *                             frequency of 1 rendering per 10ms.
+ */
+Xterm.prototype.terminadoAttach = function (socket, bidirectional, buffered) {
+  return exports.<span class="apidocCodeKeywordSpan">terminadoAttach</span>(this, socket, bidirectional, buffered);
+};
+
+/**
+ * Detaches the current terminal from the given socket.
+ *
+ * @param {WebSocket} socket - The socket from which to detach the current
+ *                             terminal.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xterm.terminado.terminadoDetach" id="apidoc.element.xterm.terminado.terminadoDetach">
+        function <span class="apidocSignatureSpan">xterm.terminado.</span>terminadoDetach
+        <span class="apidocSignatureSpan">(term, socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">terminadoDetach = function (term, socket) {
+  term.off(&#x27;data&#x27;, term._sendData);
+
+  socket = (typeof socket == &#x27;undefined&#x27;) ? term.socket : socket;
+
+  if (socket) {
+    socket.removeEventListener(&#x27;message&#x27;, term._getMessage);
+  }
+
+  delete term.socket;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+   * Detaches the current terminal from the given socket.
+   *
+   * @param {WebSocket} socket - The socket from which to detach the current
+   *                             terminal.
+   */
+  Xterm.prototype.terminadoDetach = function (socket) {
+    return exports.<span class="apidocCodeKeywordSpan">terminadoDetach</span>(this, socket);
+  };
+
+  return exports;
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
